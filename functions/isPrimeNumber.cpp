@@ -10,19 +10,16 @@ bool isPrime(int num){
    return true;
 }
 
-void printPrimeNum(int n){
-    for(int i = 1; i<=n;i++){
-        bool ans = isPrime(i);
-        if(ans){
-            cout << i << endl;
-        }
-    }
-}
-void printReverse(int a){
-    for(int i = a; i >=0; i--){
+int printPrimeNum(int num){
+    for(int i = 0; i <= num; i++){
+       if(isPrime(i)){
         cout << i << endl;
+       }
+
     }
 }
+
+
 
 int celsiusToFahrenheit(int a ){
     return (a * (9/5)) + 32;
@@ -34,5 +31,6 @@ int main(){
     printPrimeNum(number);
     // printReverse(number);
     // cout << celsiusToFahrenheit(number);
+    // cout << ans;
     return 0;
 }
