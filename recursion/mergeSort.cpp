@@ -1,23 +1,23 @@
 #include <iostream>
-#include <vector>
+#include <vector>`
 using namespace std;
 
 void merge(int arr[],int low, int mid, int high){
     vector<int> temp;
-    int left = low;
-    int right = mid + 1;
-    while(left<=mid && right <= high){
-        if(arr[left] < arr[right]){
-            temp.push_back(arr[left++]);
+    int leftArrayStartingIndex = low;
+    int rightArrayStartingIndex = mid + 1;
+    while(leftArrayStartingIndex<=mid && rightArrayStartingIndex <= high){
+        if(arr[leftArrayStartingIndex] < arr[rightArrayStartingIndex]){
+            temp.push_back(arr[leftArrayStartingIndex++]);
         } else {
-            temp.push_back(arr[right++]);
+            temp.push_back(arr[rightArrayStartingIndex++]);
         }
     }
-    while(left<=mid){
-        temp.push_back(arr[left++]);
+    while(leftArrayStartingIndex<=mid){
+        temp.push_back(arr[leftArrayStartingIndex++]);
     }
-    while(right<=high){
-        temp.push_back(arr[right++]);
+    while(rightArrayStartingIndex<=high){
+        temp.push_back(arr[rightArrayStartingIndex++]);
     }
     for(int i = low; i<=high;i++){
         arr[i] = temp[i - low];
@@ -40,7 +40,7 @@ void mergeSort(int arr[], int low, int high){
 
 int main(){
 
-    int arr[4] = {3,1,2,4};
+    int arr[5] = {3,1,2,4,5};
     int size = sizeof(arr)/sizeof(arr[0]);
     mergeSort(arr,0,size - 1);
     for(int i = 0; i<size;i++){
